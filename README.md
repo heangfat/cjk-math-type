@@ -50,3 +50,4 @@ font-variant-ligatures: contextual; font-variation-settings: "cswh"
 　萬
 ```
 - 字型變量增設粗細軸和光學軸。粗細軸`wght`控制筆畫之粗細．而光學軸`opsz`則控制筭籌〥至〩之頂畫長短，及花碼之連筆大小。
+- （私貨）增補十六進制筭籌。
