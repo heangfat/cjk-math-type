@@ -1,0 +1,85 @@
+languagesystem latn dflt; # Latin default
+languagesystem cyrl dflt; # Cyrillic default
+languagesystem grek dflt; # Greek default
+languagesystem hani dflt; # CJK Ideographic default
+languagesystem kana dflt; # Hiragana default
+#
+# Global glyph class definitions
+#
+@SM_V = [snum1 snum2 snum3];
+@SM_H = [snum1h snum2h snum3h];
+@SM_678 = [snum6 snum7 snum8];
+@SM_ALL = [num0 snum1 snum2 snum3 snum4 snum5 snum6 snum7 snum8 snum9];
+@CR_V_ALL = [crv0 crv1 crv2 crv3 crv4 crv5 crv6 crv7 crv8 crv9];
+@CR_H_ALL = [crh0 crh1 crh2 crh3 crh4 crh5 crh6 crh7 crh8 crh9];
+@CR_V_ALH = [crv0 crv1 crv2 crv3 crv4 crv5.hist crv6 crv7 crv8 crv9];
+@CR_H_ALH = [crh0 crh1 crh2 crh3 crh4 crh5.hist crh6 crh7 crh8 crh9];
+@CR_V_ALLL = [crv0 crv1 crv2 crv3 crv4 crv5 crv6 crv7 crv8 crv9 crv5.hist];
+@CR_H_ALLL = [crh0 crh1 crh2 crh3 crh4 crh5 crh6 crh7 crh8 crh9 crh5.hist];
+@CR_V_6_9 = [crv6 crv7 crv8 crv9];
+@CR_V_0_5 = [crv0 crv1 crv2 crv3 crv4 crv5.hist];
+@NUM0 = [crh0 crv0];
+@SM_FW = [num0.fw snum1.fw snum2.fw snum3.fw snum4.fw snum5.fw snum6.fw snum7.fw snum8.fw snum9.fw];
+#
+# Global lookup definitions
+#
+lookup SingleSubstitution4 { # GSUB lookup type SingleSubstitution
+    sub snum6 by snum6_left;
+    sub snum7 by snum7_left;
+    sub snum8 by snum8_left;
+} SingleSubstitution4;
+
+lookup SingleSubstitution5 { # GSUB lookup type SingleSubstitution
+    sub @CR_V_ALLL by @CR_H_ALLL;
+    sub @CR_H_ALLL by @CR_V_ALLL;
+} SingleSubstitution5;
+
+lookup SingleSubstitution2 { # GSUB lookup type SingleSubstitution
+    sub snum1 by snum1h;
+    sub snum2 by snum2h;
+    sub snum3 by snum3h;
+} SingleSubstitution2;
+
+lookup SingleSubstitution3 { # GSUB lookup type SingleSubstitution
+    sub snum1 by snum1h;
+    sub snum2 by snum2h_left;
+    sub snum3 by snum3h_left;
+} SingleSubstitution3;
+#
+# Feature definitions
+#
+feature hist { # Historical Forms
+    sub crh5 by crh5.hist;
+    sub crv5 by crv5.hist;
+} hist;
+
+feature kern { # Kerning
+    pos crh5 crv5 (wdth=30:-100 wdth=100:-300);
+    pos crv5 crh5 (wdth=30:-100 wdth=100:-300);
+    pos @CR_H_ALLL @CR_V_6_9 (wdth=30:-100 wdth=100:-350);
+    pos @CR_V_6_9 @CR_H_ALLL (wdth=30:-100 wdth=100:-350);
+    pos @CR_H_ALH crv5 (wdth=30:-100 wdth=100:-200);
+    pos crv5 @CR_H_ALH (wdth=30:-100 wdth=100:-200);
+    pos @CR_H_ALLL @CR_V_0_5 (wdth=30:-50 wdth=100:-50);
+    pos @CR_V_0_5 @CR_H_ALLL (wdth=30:-50 wdth=100:-50);
+} kern;
+
+feature ss01 { # Stylistic Set 1
+    sub @SM_ALL by @CR_V_ALL;
+} ss01;
+
+feature ss02 { # Stylistic Set 2
+    sub @SM_ALL by @CR_H_ALL;
+} ss02;
+
+feature calt { # Contextual Alternates
+    sub @SM_V @SM_V' lookup SingleSubstitution3 @SM_ALL;
+    sub @SM_V @SM_V' lookup SingleSubstitution2;
+    sub @SM_678' lookup SingleSubstitution4 @SM_ALL;
+    sub @CR_V_ALLL @CR_V_ALLL' lookup SingleSubstitution5;
+    sub @CR_H_ALLL @CR_H_ALLL' lookup SingleSubstitution5;
+} calt;
+feature fwid { # Full Widths
+    sub @NUM0 by num0.fw;
+    sub @SM_ALL by @SM_FW;
+} fwid;
