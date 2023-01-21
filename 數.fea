@@ -1,8 +1,6 @@
 languagesystem latn dflt; # Latin default
-languagesystem cyrl dflt; # Cyrillic default
 languagesystem grek dflt; # Greek default
 languagesystem hani dflt; # CJK Ideographic default
-languagesystem kana dflt; # Hiragana default
 #
 # Global glyph class definitions
 #
@@ -18,8 +16,10 @@ languagesystem kana dflt; # Hiragana default
 @CR_H_ALLL = [crh0 crh1 crh2 crh3 crh4 crh5 crh6 crh7 crh8 crh9 crh5.hist];
 @CR_V_6_9 = [crv6 crv7 crv8 crv9];
 @CR_V_0_5 = [crv0 crv1 crv2 crv3 crv4 crv5.hist];
-@NUM0 = [crh0 crv0];
 @SM_FW = [num0.fw snum1.fw snum2.fw snum3.fw snum4.fw snum5.fw snum6.fw snum7.fw snum8.fw snum9.fw];
+@SM_H_FW = [snum1h.fw snum2h.fw snum3h.fw];
+@CR_V_FW = [crv0.fw crv1.fw crv2.fw crv3.fw crv4.fw crv5.fw crv6.fw crv7.fw crv8.fw crv9.fw crv5.hist.fw];
+@CR_H_FW = [crh0.fw crh1.fw crh2.fw crh3.fw crh4.fw crh5.fw crh6.fw crh7.fw crh8.fw crh9.fw crh5.hist.fw];
 #
 # Global lookup definitions
 #
@@ -80,6 +80,8 @@ feature calt { # Contextual Alternates
     sub @CR_H_ALLL @CR_H_ALLL' lookup SingleSubstitution5;
 } calt;
 feature fwid { # Full Widths
-    sub @NUM0 by num0.fw;
     sub @SM_ALL by @SM_FW;
+    sub @SM_H by @SM_H_FW;
+    sub @CR_V_ALLL by @CR_V_FW;
+    sub @CR_H_ALLL by @CR_H_FW;
 } fwid;
