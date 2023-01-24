@@ -10,32 +10,15 @@
 
 ![輸入〩〨〇〧〦](圖/筭籌示例.png)
 
-層疊樣式表：
-``` CSS
-font-feature-settings: "ss01"/* 縱起 */"ss02"/* 橫起 */;
-font-variant-ligatures: contextual; font-kerning: normal;
-```
-闍婆腳本：
-``` JavaScript
-// …先據縱式數值求得伸縮係數…
-筭籌容器.style.fontStretch = String(伸縮係數)+"%";
-```
+須啓特性：`ss01`或`ss02`、`calt`、`kern`．`wdth`軸之數值，應據所含縱式籌之大小而求。
 
-註：〥之籌碼，用後起之「五加〇」式，即：縱式爲一橫下加一〇，橫式爲一縱下加一〇。欲用傳統五畫（𝍤、𝍭）者，請施樣式`font-variation-settings: "hist" 1`或`font-variant-alternates: historical-forms`。
+註：〥之籌碼，用後起之「五加〇」式，即：縱式爲一橫下加一〇，橫式爲一縱下加一〇。欲用傳統五畫（𝍤、𝍭）者，請啓`hist`特性。
 
 ## 花碼（蘇州碼子）
 
 花碼即籌之寫體。非末位而末畫爲橫者，即二、三、〦、〧、〨，末橫變作提。
 
-層疊樣式表：
-``` CSS
-font-variant-ligatures: contextual;
-```
-闍婆腳本：
-``` JavaScript
-// …先據縱式數值求得伸縮係數…
-筭籌容器.style.fontStretch = String(伸縮係數)+"%";
-```
+須啓特性：`calt`．`wdth`軸之數值求法類似筭籌。
 
 ## 數字卦
 
