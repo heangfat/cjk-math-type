@@ -1,4 +1,4 @@
-# 數碼字型及其簡單排版之例
+# 數碼字型及其基礎排版
 
 傳統數字有筭籌、花碼、數字卦。這些數碼古時常用，迩者竟被忽視，缺乏堪用之字型，迄今曾不能排店肆賬簿、市井價牌，古筭書之電子化更无從談起。
 
@@ -29,7 +29,7 @@ font-variant-ligatures: contextual; font-kerning: normal;
 
 層疊樣式表：
 ``` CSS
-font-variant-ligatures: contextual; font-variation-settings: "cswh"
+font-variant-ligatures: contextual;
 ```
 闍婆腳本：
 ``` JavaScript
