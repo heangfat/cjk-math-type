@@ -1,0 +1,4 @@
+.筭籌容器 {/* 二選一：*/ font-feature-settings: "ss01"/* 縱起 */; font-feature-settings: "ss02"/* 橫起 */;
+font-variant-ligatures: contextual; font-kerning: normal;
+/*〥之籌碼，用後起之「五加〇」式，即：縱式爲一橫下加一〇，橫式爲一縱下加一〇。欲用傳統五畫（𝍤、𝍭）者，施 font-variation-settings: "hist" 1*/}
+.花碼容器 {font-variant-ligatures: contextual}
