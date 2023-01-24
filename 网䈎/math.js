@@ -1,0 +1,3 @@
+// …先據縱式數值求得伸縮係數…
+筭籌容器.style.fontStretch = String(伸縮係數)+"%";
+花碼容器.style.fontStretch = String(伸縮係數)+"%";
