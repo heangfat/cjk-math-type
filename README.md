@@ -2,7 +2,7 @@
 
 傳統數字有筭籌、花碼、筮數。這些數碼古時常用，迩者竟被忽視，缺乏堪用之字型，迄今曾不能排店肆賬簿、市井價牌，古筭書之電子化更无從談起。
 
-本庫提供一款**可變字型**，包含筭籌、花碼、筮數，並簡述其基本用法。欲觀排書之效果，請移步[哂蟹齋](https://vert.neocities.org/)。
+本庫提供一款**可變字型**，包含筭籌、花碼、筮數，並簡述其基本用法。[按此處下載](https://github.com/heangfat/cjk-math-type/releases)。欲觀排書之效果，請移步[哂蟹齋](https://vert.neocities.org/)。
 
 <img src="圖/筭籌示例：行內.png" alt="行內橫排" width="20%"><img src="圖/筭籌示例：伸縮.gif" alt="无級伸縮" width="65%"><img src="圖/筮數示例：既濟.png" alt="數字卦" width="15%">
 
