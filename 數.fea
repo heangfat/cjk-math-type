@@ -37,9 +37,7 @@ lookup SingleSubstitution5 { # GSUB lookup type SingleSubstitution
 } SingleSubstitution5;
 
 lookup SingleSubstitution2 { # GSUB lookup type SingleSubstitution
-    sub snum1 by snum1h;
-    sub snum2 by snum2h;
-    sub snum3 by snum3h;
+    sub @SM_V by @SM_H;
 } SingleSubstitution2;
 
 lookup SingleSubstitution3 { # GSUB lookup type SingleSubstitution
