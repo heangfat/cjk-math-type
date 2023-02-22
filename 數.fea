@@ -54,16 +54,18 @@ feature hist { # Historical Forms
 } hist;
 
 feature kern { # Kerning
-    pos crh5 crv5 (wdth=30:-100 wdth=120:-300);
-    pos crv5 crh5 (wdth=30:-100 wdth=120:-300);
-    pos @CR_H_ALLL @CR_V_6_9 (wdth=30:-100 wdth=120:-350);
-    pos @CR_V_6_9 @CR_H_ALLL (wdth=30:-100 wdth=120:-350);
+    pos crh5 crv5 (wdth=30:-125 wdth=120:-300);
+    pos crv5 crh5 (wdth=30:-125 wdth=120:-300);
+    pos @CR_H_ALH @CR_V_6_9 (wdth=30:-100 wdth=120:-350);
+    pos @CR_V_6_9 @CR_H_ALH (wdth=30:-100 wdth=120:-350);
     pos @CR_H_ALH crv5 (wdth=30:-100 wdth=120:-200);
     pos crv5 @CR_H_ALH (wdth=30:-100 wdth=120:-200);
-    pos @CR_V_ALH crh5 (wdth=30:-100 wdth=120:-150);
-    pos crh5 @CR_V_ALH (wdth=30:-100 wdth=120:-150);
-    pos @CR_H_ALLL @CR_V_0_5 (wdth=30:-50 wdth=120:-50);
-    pos @CR_V_0_5 @CR_H_ALLL (wdth=30:-50 wdth=120:-50);
+    pos @CR_V_6_9 crh5 (wdth=30:-150 wdth=120:-350);
+    pos crh5 @CR_V_6_9 (wdth=30:-150 wdth=120:-350);
+    pos @CR_V_0_5 crh5 (wdth=30:-100 wdth=120:-150);
+    pos crh5 @CR_V_0_5 (wdth=30:-100 wdth=120:-150);
+    pos @CR_H_ALH @CR_V_0_5 (wdth=30:-50 wdth=120:-50);
+    pos @CR_V_0_5 @CR_H_ALH (wdth=30:-50 wdth=120:-50);
 } kern;
 
 feature ss01 { # Stylistic Set 1
